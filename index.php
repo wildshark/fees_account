@@ -2,12 +2,10 @@
 
 include("control/db.php");
 include("module/user.account.php");
-include("module/group.php");
-include("module/membership.php");
-include("module/ledger.php");
-include("module/dues.php");
+include("module/student.php");
+include("module/fee.php");
+include("module/grade.php");
 include("control/global.php");
-
 
 if(!isset($_REQUEST['_submit'])){
     if(!isset($_REQUEST['_client'])){
