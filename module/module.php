@@ -41,6 +41,7 @@ if(!isset($_SESSION['time'])){
                     $r[] = $_REQUEST['term'];
                     $r[] = $_REQUEST['academic-year'];
                     $r[] = "Fees Payment #".$_REQUEST['ref'];
+                    $r[] = "Bill";
                     $r[] = $_REQUEST['amount'];
                     $response = fees::add_bill($conn,$r);
                 break;

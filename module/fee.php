@@ -68,7 +68,7 @@ class fees{
 
     }
 
-    public static function add_paid($conn,$r){
+    public static function add_payment($conn,$r){
 
         $sql ="INSERT INTO 'main'.'fee_ledger'('student_id', 'tran_date', 'ref', 'class_id', 'term_id', 'acad_yr', 'details', 'pay_type', 'paid') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);

@@ -1,6 +1,8 @@
 <?php
 
 $GLOBALS = config();
+$student = student::fetch_active($conn);
+$class =  grade::fetch($conn);
 
 function config(){
 
@@ -53,8 +55,18 @@ function msgbox(){
     
 }
 
+function combo_student($student){
 
+    foreach($student as $r){
+        echo"<option value='{$r['student_id']}'>{$r['student_num']} - {$r['full_name']}</option>";
+    }
+}
 
+function combo_class($class){
 
+    foreach($class as $r){
+        echo"<option value='{$r['grade_id']}'>{$r['grade']}</option>";
+    }
+}
 
 ?>

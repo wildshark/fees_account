@@ -1,5 +1,7 @@
 <?php
+
 setcookie("_page",$_REQUEST['_admin'], time()+3600);
+
 switch($_REQUEST['_admin']){
 
     case"dashboard";
