@@ -25,7 +25,7 @@ function menu($token){
         <li><a class='sidebar-sub-toggle'><i class='ti-panel'></i> Student <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
-                <li><a href='uc-calendar.html'>Add New</a></li>
+                <li><a href='?_admin=new.profile&token={$token}'>Add New</a></li>
                 <li><a href='?_admin=profile&token={$token}'>Profile</a></li>
                 <li><a href='?_admin=ledger&token={$token}'>Ledger</a></li>
                 <li><a href='?_admin=archive&token={$token}'>Archive</a></li>

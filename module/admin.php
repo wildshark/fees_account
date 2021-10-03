@@ -13,6 +13,10 @@ switch($_REQUEST['_admin']){
         require("template/profile.list.php");
     break;
 
+    case"new.profile";
+        require("template/add.profile.php");
+    break;
+
     case"archive";
         $data = student::fetch_passive($conn);
         require("template/profile.list.php");

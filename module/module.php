@@ -68,27 +68,17 @@ if(!isset($_SESSION['time'])){
                     $response = group::add($conn,$r);
                 break;
         
-                case"add-new-member";
-                    $r[] = $_REQUEST['account-id'];
-                    $r[] = $_REQUEST['group'];
-                    $r[] = $_REQUEST['fname'];
-                    $r[] = $_REQUEST['mname'];
-                    $r[] = $_REQUEST['surname'];
+                case"add-new-profile";
+                    $r[] = $_REQUEST['student-num'];
+                    $r[] = $_REQUEST['full-name'];
                     $r[] = $_REQUEST['dob'];
+                    $r[] = $_REQUEST['gender'];
                     $r[] = $_REQUEST['nationality'];
-                    $r[] = $_REQUEST['type'];
-                    $r[] = $_REQUEST['id-num'];
-                    $r[] = $_REQUEST['email'];
-                    $r[] = $_REQUEST['mobile1'];
-                    $r[] = $_REQUEST['mobile2'];
-                    $r[] = $_REQUEST['occupation'];
-                    $r[] = $_REQUEST['address1'];
-                    $r[] = $_REQUEST['address2'];
-                    $r[] = $_REQUEST['nok'];
-                    $r[] = $_REQUEST['relationship'];
-                    $r[] = $_REQUEST['nok-mobile'];
-                    $r[] = $_REQUEST['nok-address'];
-                    $r[] = "Enable";
+                    $r[] = $_REQUEST['address'];
+                    $r[] = $_REQUEST['gname'];
+                    $r[] = $_REQUEST['gmobile'];
+                    $r[] = $_REQUEST['photo'];
+                    $r[] = $_REQUEST['status'];
                     $response = membership::add($conn,$r);
                 break;
         
