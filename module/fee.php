@@ -34,7 +34,7 @@ class fees{
 
     public static function add_bill($conn,$r){
 
-        $sql ="INSERT INTO 'main'.'fee_ledger'('student_id', 'tran_date', 'ref', 'class_id', 'details', 'pay_type', 'bill') VALUES (?,?,?,?,?,?,?)";
+        $sql ="INSERT INTO 'main'.'fee_ledger'('student_id', 'tran_date', 'ref', 'class_id', 'term_id', 'acad_yr', 'details', 'pay_type', 'bill') VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$r[0]);
         $stmt->bindParam(2,$r[1]);
@@ -43,6 +43,8 @@ class fees{
         $stmt->bindParam(5,$r[4]);
         $stmt->bindParam(6,$r[5]);
         $stmt->bindParam(7,$r[6]);
+        $stmt->bindParam(8,$r[7]);
+        $stmt->bindParam(9,$r[8]);
         return $stmt->execute();
     }
 
@@ -68,7 +70,7 @@ class fees{
 
     public static function add_paid($conn,$r){
 
-        $sql ="INSERT INTO 'main'.'fee_ledger'('student_id', 'tran_date', 'ref', 'class_id', 'details', 'pay_type', 'paid') VALUES (?,?,?,?,?,?,?)";
+        $sql ="INSERT INTO 'main'.'fee_ledger'('student_id', 'tran_date', 'ref', 'class_id', 'term_id', 'acad_yr', 'details', 'pay_type', 'paid') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$r[0]);
         $stmt->bindParam(2,$r[1]);
@@ -77,6 +79,8 @@ class fees{
         $stmt->bindParam(5,$r[4]);
         $stmt->bindParam(6,$r[5]);
         $stmt->bindParam(7,$r[6]);
+        $stmt->bindParam(8,$r[7]);
+        $stmt->bindParam(9,$r[8]);
         return $stmt->execute();
     }
 

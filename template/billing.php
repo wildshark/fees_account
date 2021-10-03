@@ -254,7 +254,7 @@
                     <div class="row">  
                         <div class="col-lg-12">
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">New Bill</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".ModalBilling">New Bill</button>
                             <div class="card">    
                                 <div class="bootstrap-data-table-panel">
                                     <div class="table-responsive">
