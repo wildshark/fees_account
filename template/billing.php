@@ -299,7 +299,7 @@
                                                                     <td>{$r['ref']}</td>
                                                                     <td>{$r['bill']}</td>
                                                                     <td>
-                                                                    
+                                                                        <a href='?_submit=delete&action=ledger&id={$r['ledger_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>
                                                                 </tr>";
                                                         }

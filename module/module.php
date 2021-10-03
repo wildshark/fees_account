@@ -84,8 +84,13 @@ if(!isset($_SESSION['time'])){
                     $r[] = $_REQUEST['gmobile'];
                     $r[] = $_REQUEST['photo'];
                     $r[] = $_REQUEST['status'];
-                    $r[] = $_REQUEST['student_id'];
-                    $response = student::update($conn,$r);                   
+                    $r[] = $_SESSION['sudent_id'];
+                    if(false == student::update($conn,$r)){
+                        $response = false;
+                    }else{
+                       $response = $_SESSION['sudent_id'];
+                    }
+                                       
                 break;
 
                 case"add-grade";
@@ -94,9 +99,10 @@ if(!isset($_SESSION['time'])){
                 break;
         
                 case"delete";
+
                    if($_REQUEST['action'] === "student"){
                        $response = student::delete($conn,$_GET['id']);
-                       $response = fees::delete($conn,$_GET['id']);
+                       //$response = fees::delete($conn,$_GET['id']);
                    }elseif($_REQUEST['action'] === "ledger"){
                         $response = fees::delete($conn,$_GET['id']);
                    }elseif($_REQUEST['action'] === "grade"){
@@ -114,6 +120,7 @@ if(!isset($_SESSION['time'])){
             }else{
                 $url['_admin'] = $page;
                 $url['token'] = $_SESSION['token'];
+                $url['id'] = $response;
                 $url['err'] = 200;
             }
         }

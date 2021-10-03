@@ -26,7 +26,7 @@ class grade{
         return $stmt->fetchAll();
     }
 
-    public static function delete($conn,$r){
+    public static function delete($conn,$id){
 
         $sql ="DELETE FROM 'main'.'class_grade' WHERE rowid = ?";
         $stmt = $conn->prepare($sql);

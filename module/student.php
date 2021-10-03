@@ -37,6 +37,7 @@ class student{
         $stmt->bindParam(8,$r[7]);
         $stmt->bindParam(9,$r[8]);
         $stmt->bindParam(10,$r[9]);
+        $stmt->bindParam(11,$r[10]);
         return $stmt->execute();
     }
 
@@ -68,7 +69,7 @@ class student{
         return $stmt->fetch();
     }
 
-    public static function delete($conn,$r){
+    public static function delete($conn,$id){
 
         $sql="DELETE FROM 'main'.'student_profile' WHERE rowid =?";
         $stmt = $conn->prepare($sql);

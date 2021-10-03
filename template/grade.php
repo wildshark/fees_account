@@ -290,11 +290,9 @@
                                                                     <td>{$n}</td>
                                                                     <td>{$r['grade']}</td>
                                                                     <td>
-                                                                    
+                                                                    <a href='?_submit=delete&action=grade&id={$r['grade_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>
                                                                 </tr>";
-    
-
                                                         }
                                                     }
                                                 ?>

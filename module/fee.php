@@ -84,7 +84,7 @@ class fees{
         return $stmt->execute();
     }
 
-    public static function delete($conn,$r){
+    public static function delete($conn,$id){
 
         $sql="DELETE FROM 'main'.'fee_ledger' WHERE rowid =?";
         $stmt = $conn->prepare($sql);

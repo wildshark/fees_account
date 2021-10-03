@@ -302,7 +302,7 @@
                                                                     <td>{$r['ref']}</td>
                                                                     <td>{$r['paid']}</td>
                                                                     <td>
-                                                                    
+                                                                        <a href='?_submit=delete&action=grade&id={$r['ledger_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>
                                                                 </tr>";
                                                         }

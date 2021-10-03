@@ -300,7 +300,9 @@
                                                                     <td>{$r['dob']}</td>
                                                                     <td>{$r['nationality']}</td>
                                                                     <td>
-                                                                    
+                                                                    <a href='' class='btn btn btn-xs btn-primary'>View</a>
+                                                                    <a href='?_admin=update.profile&token={$_GET['token']}&id={$r['student_id']}' class='btn btn btn-xs btn-info'>Edit</a>
+                                                                    <a href='?_submit=delete&action=student&id={$r['student_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>
                                                                 </tr>";
     

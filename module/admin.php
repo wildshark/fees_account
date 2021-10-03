@@ -39,11 +39,8 @@ switch($_REQUEST['_admin']){
         $gname = $data['gname'];
         $gmobile = $data['gmobile'];
         $photo = $data['photo'];
-        if($data['status_id'] == 1){
-            $status = "Enable";
-        }else{
-            $status = "Disable";
-        }
+        $status = $data['status_id'];
+        $_SESSION['sudent_id'] = $data['student_id'];
         $btn = "update-profile";
         require("template/add.profile.php");
     break;
