@@ -59,62 +59,48 @@ if(!isset($_SESSION['time'])){
                     $response = fees::add_payment($conn,$r);
                 break;
         
-                case"add-group";
-                    $r[] = $_REQUEST['group'];
-                    $r[] = $_REQUEST['leader'];
-                    $r[] = $_REQUEST['address'];
-                    $r[] = $_REQUEST['mobile'];
-                    $r[] = "Enable";
-                    $response = group::add($conn,$r);
-                break;
-        
                 case"add-new-profile";
                     $r[] = $_REQUEST['student-num'];
                     $r[] = $_REQUEST['full-name'];
-                    $r[] = $_REQUEST['dob'];
                     $r[] = $_REQUEST['gender'];
+                    $r[] = $_REQUEST['dob'];                    
                     $r[] = $_REQUEST['nationality'];
                     $r[] = $_REQUEST['address'];
                     $r[] = $_REQUEST['gname'];
                     $r[] = $_REQUEST['gmobile'];
                     $r[] = $_REQUEST['photo'];
                     $r[] = $_REQUEST['status'];
-                    $response = membership::add($conn,$r);
+                    $response = student::add($conn,$r);
                 break;
         
-                case"update-member";
-                    $r[] = $_REQUEST['account-id'];
-                    $r[] = $_REQUEST['group'];
-                    $r[] = $_REQUEST['fname'];
-                    $r[] = $_REQUEST['mname'];
-                    $r[] = $_REQUEST['surname'];
-                    $r[] = $_REQUEST['dob'];
+                case"update-profile";
+                    $r[] = $_REQUEST['student-num'];
+                    $r[] = $_REQUEST['full-name'];
+                    $r[] = $_REQUEST['gender'];
+                    $r[] = $_REQUEST['dob'];                    
                     $r[] = $_REQUEST['nationality'];
-                    $r[] = $_REQUEST['type'];
-                    $r[] = $_REQUEST['id-num'];
-                    $r[] = $_REQUEST['email'];
-                    $r[] = $_REQUEST['mobile1'];
-                    $r[] = $_REQUEST['mobile2'];
-                    $r[] = $_REQUEST['occupation'];
-                    $r[] = $_REQUEST['address1'];
-                    $r[] = $_REQUEST['address2'];
-                    $r[] = $_REQUEST['nok'];
-                    $r[] = $_REQUEST['relationship'];
-                    $r[] = $_REQUEST['nok-mobile'];
-                    $r[] = $_REQUEST['nok-address'];
-                    $r[] = "Enable";
-                    $r[] = $_SESSION['member_id'];
-                    $response = membership::update($conn,$r);
+                    $r[] = $_REQUEST['address'];
+                    $r[] = $_REQUEST['gname'];
+                    $r[] = $_REQUEST['gmobile'];
+                    $r[] = $_REQUEST['photo'];
+                    $r[] = $_REQUEST['status'];
+                    $r[] = $_REQUEST['student_id'];
+                    $response = student::update($conn,$r);                   
+                break;
+
+                case"add-grade";
+                    $r[] = $_REQUEST['grade'];
+                    $response = grade::add($conn,$r);     
                 break;
         
                 case"delete";
-                   if($_REQUEST['action'] === "group"){
-                       $response = group::delete($conn,$_GET['id']);
-                   }elseif($_REQUEST['action'] === "member"){
-                        $response = membership::delete($conn,$_GET['id']);
+                   if($_REQUEST['action'] === "student"){
+                       $response = student::delete($conn,$_GET['id']);
+                       $response = fees::delete($conn,$_GET['id']);
                    }elseif($_REQUEST['action'] === "ledger"){
-                        $response = ledger::delete($conn,$_GET['id']);
-                        membership::delete_loan($conn,$_GET['ref']);
+                        $response = fees::delete($conn,$_GET['id']);
+                   }elseif($_REQUEST['action'] === "grade"){
+                        $response = grade::delete($conn,$_GET['id']);
                    }
                 break;
             }

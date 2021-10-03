@@ -264,53 +264,56 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Student ID</label>
-                                                        <input type="text" name="student-num" class="form-control" value="Some text value...">
+                                                        <input type="text" name="student-num" class="form-control" value="<?=$student_id?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Full Name</label>
-                                                        <input class="form-control" name="full-name" type="text" placeholder="Email" name="example-email">
+                                                        <input class="form-control" name="full-name" type="text" value="<?=$fullname?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Date of Birth</label>
-                                                        <input type="text" name="dob" class="form-control" value="Some text value...">
+                                                        <input type="date" name="dob" class="form-control" value="<?=$date?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Gender</label>
                                                         <select name="gender" class="form-control">
+                                                            <option><?=$gender?></option>
 															<option>Male</option>
 															<option>Female</option>
 														</select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Nationality</label>
-                                                        <input type="text" name="nationality" class="form-control" value="Some text value...">
+                                                        <input type="text" name="nationality" class="form-control" value="<?=$nationality?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Contact Address</label>
-                                                        <input class="form-control" name="address" type="text" value="Readonly value" readonly="">
+                                                        <input class="form-control" name="address" type="text" value="<?=$address?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>gname</label>
-                                                        <input type="text" name="gname" class="form-control" value="Some text value...">
+                                                        <input type="text" name="gname" class="form-control" value="<?=$gname?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>gmobile</label>
-                                                        <input type="text" name="gmobile" class="form-control" value="Some text value...">
+                                                        <input type="text" name="gmobile" class="form-control" value="<?=$gmobile?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>photo</label>
-                                                        <input type="text" class="form-control" value="Some text value...">
+                                                        <input type="file" name="photo" class="form-control" value="<?=$photo?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Status</label>
                                                         <select name="status" class="form-control">
+                                                            <option><?=$status?></option>
 															<option>Enable</option>
 															<option>Disable</option>
 														</select>
                                                     </div>
                                                 </div>
+                                                <button type="submit" name="_submit" value="<?=$btn?>" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
                                     </div>
@@ -320,8 +323,6 @@
                         <!-- /# column -->
                     </div>
                     <!-- /# row -->
-
-
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="footer">

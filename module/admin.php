@@ -14,6 +14,37 @@ switch($_REQUEST['_admin']){
     break;
 
     case"new.profile";
+        $student_id = "";
+        $fullname = "";
+        $dob = "";
+        $gender = "";
+        $nationality = "";
+        $address = "";
+        $gname = "";
+        $gmobile = "";
+        $photo = "";
+        $status ="";
+        $btn = "add-new-profile";
+        require("template/add.profile.php");
+    break;
+
+    case"update.profile";
+        $data = student::view($conn,$_GET['id']);
+        $student_id = $data['student_num'];
+        $fullname = $data['full_name'];
+        $dob = $data['dob'];
+        $gender = $data['gender'];
+        $nationality = $data['nationality'];
+        $address = $data['contact_address'];
+        $gname = $data['gname'];
+        $gmobile = $data['gmobile'];
+        $photo = $data['photo'];
+        if($data['status_id'] == 1){
+            $status = "Enable";
+        }else{
+            $status = "Disable";
+        }
+        $btn = "update-profile";
         require("template/add.profile.php");
     break;
 

@@ -134,5 +134,30 @@
                 </div>
             </div>
         </div>
+    </div> 
+
+    <div class="modal fade ModalGrade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="index.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Grade Name</label>
+                                <input type="text" name="grade" class="form-control" placeholder="Grade">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="_submit" value="add-grade" class="btn btn-primary">Save changes</button>
+                        </div> 
+                    </form>   
+                </div>
+            </div>
+        </div>
     </div>    
-    

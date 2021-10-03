@@ -4,6 +4,7 @@ class student{
     public static function add($conn,$r){
 
         $sql="INSERT INTO 'main'.'student_profile'('student_num', 'full_name', 'gender', 'dob', 'nationality', 'contact_address', 'gname', 'gmobile', 'photo', 'status_id') VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$r[0]);
         $stmt->bindParam(2,$r[1]);
         $stmt->bindParam(3,$r[2]);
@@ -14,12 +15,18 @@ class student{
         $stmt->bindParam(8,$r[7]);
         $stmt->bindParam(9,$r[8]);
         $stmt->bindParam(10,$r[9]);
-        return $stmt->execute();
+
+        if(false == $stmt->execute()){
+            return false;
+        }else{
+            return $conn->lastInsertId();
+        }
     }
 
     public static function update($conn,$r){
 
-        $sql ="UPDATE 'main'.'student_profile' SET 'student_num' =?, 'full_name' = ?, 'gender' = ?, 'dob' = ?, 'nationality' = ?, 'contact_address' = ?, 'gname' = ?, 'gmobile' = ?, 'photo' = ?, 'status_id' =? WHERE rowid = 6";
+        $sql ="UPDATE 'main'.'student_profile' SET 'student_num' =?, 'full_name' = ?, 'gender' = ?, 'dob' = ?, 'nationality' = ?, 'contact_address' = ?, 'gname' = ?, 'gmobile' = ?, 'photo' = ?, 'status_id' =? WHERE rowid = ?";
+        $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$r[0]);
         $stmt->bindParam(2,$r[1]);
         $stmt->bindParam(3,$r[2]);
@@ -35,7 +42,7 @@ class student{
 
     public static function fetch_active($conn){
 
-        $sql="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'student_profile' WHERE status_id = 1 LIMIT 0,1000";
+        $sql="SELECT * FROM 'main'.'get_profile_active' LIMIT 0,1000";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
@@ -44,14 +51,14 @@ class student{
 
     public static function fetch_passive($conn){
 
-        $sql="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'student_profile' WHERE status_id > 1 LIMIT 0,1000";
+        $sql="SELECT * FROM 'main'.'get_profile_passive' LIMIT 0,1000";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
         return $stmt->fetchAll();
     }
 
-    public static function view($conn,$r){
+    public static function view($conn,$id){
 
         $sql="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'student_profile' WHERE student_id=? LIMIT 0,1000";
         $stmt = $conn->prepare($sql);

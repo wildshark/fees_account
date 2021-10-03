@@ -6,7 +6,7 @@ class grade{
 
         $sql="INSERT INTO 'main'.'class_grade'('grade') VALUES (?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(1,$id);
+        $stmt->bindParam(1,$r[0]);
         return $stmt->execute();
     }
 
