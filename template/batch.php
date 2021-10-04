@@ -262,10 +262,12 @@
                                             <thead>
                                                 <tr>
                                                     <th>S/N</th>
+                                                    <th>Academic Year</th>
+                                                    <th>Grade</th>
+                                                    <th>Section</th>
                                                     <th>Student ID</th>
                                                     <th>Full Name</th>
-                                                    <th>Grade</th>
-                                                    <th>Academic Year</th>
+                                                    <th>Fees</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -276,6 +278,11 @@
                                                         <tr>
                                                             <td></td>
                                                             <td></td>
+                                                            <td></td>  
+                                                            <td></td>  
+                                                            <td></td>  
+                                                            <td></td>  
+                                                            <td></td>  
                                                             <td></td>                                                        
                                                         </tr>";
                                                     }else{
@@ -288,16 +295,16 @@
                                                             
                                                             echo"<tr>
                                                                     <td>{$n}</td>
-                                                                    <td>{$r['student_num']}</td>
-                                                                    <td>{$r['full_name']}</td>
-                                                                    <td>{$r['grade']}</td>
                                                                     <td>{$r['acad_id']}</td>
+                                                                    <td>{$r['grade']}</td>
+                                                                    <td>{$r['st_class_type_id']}</td>
+                                                                    <td>{$r['student_num']}</td>
+                                                                    <td>{$r['full_name']}</td>                                                                    
+                                                                    <td>{$r['fees']}</td>
                                                                     <td>
                                                                     
                                                                     </td>
                                                                 </tr>";
-    
-
                                                         }
                                                     }
                                                 ?>
