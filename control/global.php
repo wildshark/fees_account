@@ -7,9 +7,9 @@ $class =  grade::fetch($conn);
 function config(){
 
     return array(
-        "application"=>"",
-        "header"=>"Funds Book",
-        "copyright"=>"Copyright © Charter Trust Enterprise &amp; Developed by <a href='#' target='_blank'>iQuipe Digital</a> 2021"
+        "application"=>"Fees Record",
+        "header"=>"Fees Record",
+        "copyright"=>"Copyright © Active A&T Corp. &amp; Developed by <a href='http://iquipedigital.com' target='_blank'>iQuipe Digital</a> 2021"
     );
 }
 
@@ -40,8 +40,8 @@ function menu($token){
         <div class='logo'><a href='index.html'>
                 <!-- <img src='assets/images/logo.png' alt='' /> --><span>Fees Account</span></a></div>
       
-        <li><a href='?_admin=dashboard&token={$token}'><i class='ti-close'></i>Dashboard</a></li>
-        <li><a class='sidebar-sub-toggle'><i class='ti-panel'></i> Student <span
+        <li><a href='?_admin=dashboard&token={$token}'><i class='ti-desktop'></i>Dashboard</a></li>
+        <li><a class='sidebar-sub-toggle'><i class='ti-user'></i> Student <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
                 <li><a href='?_admin=new.profile&token={$token}'>Add New</a></li>
@@ -51,22 +51,23 @@ function menu($token){
                 
             </ul>
         </li>
-        <li><a href='?_admin=billing&token={$token}'><i class='ti-close'></i>Billing</a></li>
-        <li><a href='?_admin=payment&token={$token}'><i class='ti-close'></i>Payment</a></li>
-        <li><a><i class='ti-close'></i>Fees Ledger</a></li>
-        <li><a class='sidebar-sub-toggle'><i class='ti-layout-grid4-alt'></i> Class Setup <span
+        <li><a href='?_admin=billing&token={$token}'><i class='ti-stats-up'></i>Billing</a></li>
+        <li><a href='?_admin=payment&token={$token}'><i class='ti-stats-down'></i>Payment</a></li>
+        <!--li><a href='?_admin=ledger&token={$token}'><i class='ti-agenda'></i>Fees Ledger</a></li-->
+        <li><a class='sidebar-sub-toggle'><i class='ti-package'></i> Class <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
                 <li><a href='?_admin=class&token={$token}'>Class List</a></li>
                 <li><a href='?_admin=assign.class&token={$token}'>Assign Student</a></li>
             </ul>
         </li>
-        <li><a class='sidebar-sub-toggle'><i class='ti-heart'></i> Icons <span
+        <li><a href='?_user=user-exit-app'><i class='ti-power-off'></i>Logout</a></li>
+        <!--li><a class='sidebar-sub-toggle'><i class='ti-heart'></i> Icons <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
                 <li><a href='font-themify.html'>Themify</a></li>
             </ul>
-        </li>
+        </li-->
     </ul>";
 }
 

@@ -107,7 +107,7 @@
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
+                                    <div class="stat-icon dib"><i class="ti-user color-primary color-success border-success"></i>
                                     </div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">Total Student</div>
@@ -119,7 +119,7 @@
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
+                                    <div class="stat-icon dib"><i class="ti-money border-primary"></i>
                                     </div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">Fees</div>
@@ -131,7 +131,7 @@
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                                    <div class="stat-icon dib"><i class="ti-wallet color-pink border-pink"></i>
                                     </div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">Paid</div>
@@ -143,7 +143,7 @@
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                    <div class="stat-icon dib"><i class="ti-server color-danger border-danger"></i></div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">Balance</div>
                                         <div class="stat-digit"><?=$ledger['bal']?></div>
@@ -221,7 +221,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="footer">
-                                <p>2018 © Admin Board. - <a href="#">example.com</a></p>
+                            <p><?=$GLOBALS['copyright']?></p>
                             </div>
                         </div>
                     </div>

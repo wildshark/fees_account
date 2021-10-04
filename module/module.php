@@ -22,9 +22,8 @@ if(!isset($_SESSION['time'])){
                     $url['_client'] = "dashboard";
                     $url['token'] = $token;
                 } 
-                
-                header("location: ?".http_build_query($url));
            }
+           header("location: ?".http_build_query($url));
         exit();
     }else{
         if(!isset($_SESSION['token'])){
