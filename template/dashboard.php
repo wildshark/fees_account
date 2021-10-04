@@ -92,12 +92,12 @@
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">Time <?=date("D d M,Y")?></li>
+                                    <li class="breadcrumb-item"> <?=date("D d M,Y")?></li>
                                    
                                 </ol>
                             </div>
                         </div>
-</div>
+                    </div>
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
