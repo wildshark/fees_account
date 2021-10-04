@@ -94,6 +94,20 @@ class student{
 
         return $stmt->fetchAll();
     }
+
+    public static function add_assign_batch($conn,$r){
+
+        $sql ="INSERT INTO 'main'.'student_assign_batch'('student_id', 'class_id', 'st_class_type_id', 'acad_id', 'tran_date', 'fees') VALUES (?,?,?,?,?,?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$r[0]);
+        $stmt->bindParam(2,$r[1]);
+        $stmt->bindParam(3,$r[2]);
+        $stmt->bindParam(4,$r[3]);
+        $stmt->bindParam(5,$r[4]);
+        $stmt->bindParam(6,$r[5]);
+        return $stmt->execute();
+               
+    }
 }
 
 ?>

@@ -93,15 +93,24 @@ if(!isset($_SESSION['time'])){
                         $response = false;
                     }else{
                        $response = $_SESSION['sudent_id'];
-                    }
-                                       
+                    }                
                 break;
 
                 case"add-grade";
                     $r[] = $_REQUEST['grade'];
                     $response = grade::add($conn,$r);     
                 break;
-        
+
+                case"add-batch";
+                    $r[] = $_REQUEST['student'];
+                    $r[] = $_REQUEST['class'];
+                    $r[] = $_REQUEST['class-section'];
+                    $r[] = $_REQUEST['academic-year'];
+                    $r[] = $_REQUEST['date'];
+                    $r[] = $_REQUEST['term'];
+                    $response = student::add_assign_batch($conn,$r);
+                break;
+
                 case"delete";
 
                    if($_REQUEST['action'] === "student"){
