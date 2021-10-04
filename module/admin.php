@@ -60,6 +60,23 @@ switch($_REQUEST['_admin']){
         require("template/add.profile.php");
     break;
 
+    case"view.profile";
+        $data = student::view($conn,$_GET['id']);
+        $student_id = $data['student_num'];
+        $fullname = $data['full_name'];
+        $dob = $data['dob'];
+        $gender = $data['gender'];
+        $nationality = $data['nationality'];
+        $address = $data['contact_address'];
+        $gname = $data['gname'];
+        $gmobile = $data['gmobile'];
+        $photo = $data['photo'];
+        $status = $data['status_id'];
+        $_SESSION['sudent_id'] = $data['student_id'];
+        $btn = "update-profile";
+        require("template/view.profile.php");
+    break;
+
     case"archive";
         $data = student::fetch_passive($conn);
         require("template/profile.list.php");
