@@ -259,7 +259,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-elements">
-                                        <form>
+                                        <form method="post" action="index.php" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">

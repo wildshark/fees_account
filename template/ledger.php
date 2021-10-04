@@ -300,7 +300,7 @@
                                                                     <td>{$r['paid']}</td>
                                                                     <td>{$r['bal']}</td>
                                                                     <td>
-                                                                    
+                                                                        <a href='?_admin=ledger.details&id={$r['student_id']}&token={$_GET['token']}' class='btn btn-xs btn-danger'>View</a>
                                                                     </td>
                                                                 </tr>";
     

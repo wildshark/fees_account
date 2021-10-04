@@ -60,6 +60,9 @@ if(!isset($_SESSION['time'])){
                 break;
         
                 case"add-new-profile";
+                    $oldpath = $_FILES['photo']['tmp_name'];
+                    $newpath ="photo/".$_FILES['photo']['name'];
+
                     $r[] = $_REQUEST['student-num'];
                     $r[] = $_REQUEST['full-name'];
                     $r[] = $_REQUEST['gender'];
@@ -68,9 +71,10 @@ if(!isset($_SESSION['time'])){
                     $r[] = $_REQUEST['address'];
                     $r[] = $_REQUEST['gname'];
                     $r[] = $_REQUEST['gmobile'];
-                    $r[] = $_REQUEST['photo'];
+                    $r[] = $newpath;
                     $r[] = $_REQUEST['status'];
-                    $response = student::add($conn,$r);
+                    $response = student::add($conn,$r);                    
+                    move_uploaded_file($oldpath, $newpath);
                 break;
         
                 case"update-profile";

@@ -8,7 +8,7 @@ class fees{
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetch();
 
     }
 
@@ -22,9 +22,19 @@ class fees{
 
     }
 
-    public static function fetch_view_ledger($conn,$r){
-
+    public static function student_ledger_sum($conn,$id){
+        
         $sql ="SELECT * FROM 'main'.'get_ledger' WHERE student_id=? LIMIT 0,1000";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$id);
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
+
+    public static function fetch_view_ledger($conn,$id){
+
+        $sql ="SELECT * FROM 'main'.'get_ledger_details' WHERE student_id=? LIMIT 0,1000";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$id);
         $stmt->execute();

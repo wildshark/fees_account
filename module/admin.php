@@ -5,6 +5,21 @@ setcookie("_page",$_REQUEST['_admin'], time()+3600);
 switch($_REQUEST['_admin']){
 
     case"dashboard";
+        $student = student::total($conn);
+        if($student == false){
+            $total ="0";
+        }else{
+            $total = $student['total'];
+        }
+        $ledger = fees::summary_ledger($conn);
+        if($ledger == false){
+            $ledger = array(
+                "bill"=>"0.00",
+                "paid"=>"0.00",
+                "bal"=>"0.00"
+            );
+        }
+        $data = fees::fetch_ledger($conn);
         require("template/dashboard.php");
     break;
 
@@ -53,6 +68,19 @@ switch($_REQUEST['_admin']){
     case"ledger";
         $data = fees::fetch_ledger($conn);
         require("template/ledger.php");
+    break;
+
+    case"ledger.details";
+        $summary = fees::student_ledger_sum($conn,$_GET['id']);
+        if($summary == false){
+            $summary = array(
+                "bill"=>0,
+                "paid"=>0,
+                "bal"=>0
+            );
+        }
+        $data = fees::fetch_view_ledger($conn,$_GET['id']);
+        require("template/ledger.details.php");
     break;
 
     case"billing";

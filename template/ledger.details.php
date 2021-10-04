@@ -254,10 +254,57 @@
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
+                <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Date</div>
+                                        <div class="stat-digit"><?=date("d M, Y")?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Fees</div>
+                                        <div class="stat-digit"><?=$summary['bill']?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Paid</div>
+                                        <div class="stat-digit"><?=$summary['paid']?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Balance</div>
+                                        <div class="stat-digit"><?=$summary['bal']?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".ModalPayment">New Payment</button>
                             <div class="card">
                                 <div class="bootstrap-data-table-panel">
                                     <div class="table-responsive">
@@ -265,11 +312,13 @@
                                             <thead>
                                                 <tr>
                                                     <th>S/N</th>
-                                                    <th>Date</th>
-                                                    <th>Student ID</th>
-                                                    <th>Full Name</th>
-                                                    <th>Ref</th>
-                                                    <th>Amount</th>
+                                                    <th>Ref #</th>
+                                                    <th>Academic Yr.</th>
+                                                    <th>Term</th>
+                                                    <th>Grade</th>
+                                                    <th>Type</th>
+                                                    <th>Bill</th>
+                                                    <th>Paid</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -284,7 +333,9 @@
                                                             <td></td>
                                                             <td></td>
                                                             <td></td>
-                                                            <td></td>                                                        
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
                                                         </tr>";
                                                     }else{
                                                         foreach($data as $r){
@@ -296,15 +347,19 @@
                                                             
                                                             echo"<tr>
                                                                     <td>{$n}</td>
-                                                                    <td>{$r['tran_date']}</td>
-                                                                    <td>{$r['student_num']}</td>
-                                                                    <td>{$r['full_name']}</td>
                                                                     <td>{$r['ref']}</td>
+                                                                    <td>{$r['acad_yr']}</td>
+                                                                    <td>{$r['term']}</td>
+                                                                    <td>{$r['grade']}</td>
+                                                                    <td>{$r['pay_type']}</td>
+                                                                    <td>{$r['bill']}</td>
                                                                     <td>{$r['paid']}</td>
                                                                     <td>
                                                                         <a href='?_submit=delete&action=ledger&id={$r['ledger_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>
                                                                 </tr>";
+    
+
                                                         }
                                                     }
                                                 ?>

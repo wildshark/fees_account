@@ -1,6 +1,15 @@
 <?php
 class student{
 
+    public static function total($conn){
+
+        $sql ="SELECT count(get_profile_active.student_id) as total FROM get_profile_active";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
+
     public static function add($conn,$r){
 
         $sql="INSERT INTO 'main'.'student_profile'('student_num', 'full_name', 'gender', 'dob', 'nationality', 'contact_address', 'gname', 'gmobile', 'photo', 'status_id') VALUES (?,?,?,?,?,?,?,?,?,?)";
