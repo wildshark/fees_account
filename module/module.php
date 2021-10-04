@@ -111,6 +111,13 @@ if(!isset($_SESSION['time'])){
                     $response = student::add_assign_batch($conn,$r);
                 break;
 
+                case"change-password";
+                    $string = $_REQUEST['password'];
+                    $response = user_account::password($conn,$string);
+                    header("location: ?_user=rest-password");
+                    exit();
+                break;
+
                 case"delete";
                    if($_REQUEST['action'] === "student"){
                        $response = student::delete($conn,$_GET['id']);

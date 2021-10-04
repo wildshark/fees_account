@@ -14,6 +14,14 @@ class user_account{
         return $stmt->fetch();
     }
 
+    public static function password($conn,$string){
+
+        $sql="UPDATE 'main'.'user_account' SET 'password' =? WHERE rowid = 1";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$string);
+        return $stmt->execute();
+    }
+
 }
 
 ?>

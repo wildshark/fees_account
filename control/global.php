@@ -37,7 +37,7 @@ function menu($token){
 
     echo"
     <ul>
-        <div class='logo'><a href='index.html'>
+        <div class='logo'><a href='#'>
                 <!-- <img src='assets/images/logo.png' alt='' /> --><span>Fees Account</span></a></div>
       
         <li><a href='?_admin=dashboard&token={$token}'><i class='ti-desktop'></i>Dashboard</a></li>
@@ -58,9 +58,11 @@ function menu($token){
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
                 <li><a href='?_admin=class&token={$token}'>Class List</a></li>
+                <li><a href='?_admin=class.section&token={$token}'>Section</a></li>
                 <li><a href='?_admin=assign.class&token={$token}'>Assign Student</a></li>
             </ul>
         </li>
+        <li><a href='#' data-toggle='modal' data-target='.ModalPassword'><i class='ti-unlock'></i>user</a></li>
         <li><a href='?_user=user-exit-app'><i class='ti-power-off'></i>Logout</a></li>
         <!--li><a class='sidebar-sub-toggle'><i class='ti-heart'></i> Icons <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
