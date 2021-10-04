@@ -105,7 +105,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Basic Elements</h4>
+                                    <!--h4>Basic Elements</h4-->
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-elements">
@@ -136,22 +136,23 @@
                                                         <label>Nationality</label>
                                                         <input type="text" name="nationality" class="form-control" value="<?=$nationality?>">
                                                     </div>
+                                                    
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>Guardian Name</label>
+                                                        <input type="text" name="gname" class="form-control" value="<?=$gname?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Guardian Mobile</label>
+                                                        <input type="text" name="gmobile" class="form-control" value="<?=$gmobile?>">
+                                                    </div>
                                                     <div class="form-group">
                                                         <label>Contact Address</label>
                                                         <input class="form-control" name="address" type="text" value="<?=$address?>">
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label>gname</label>
-                                                        <input type="text" name="gname" class="form-control" value="<?=$gname?>">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>gmobile</label>
-                                                        <input type="text" name="gmobile" class="form-control" value="<?=$gmobile?>">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>photo</label>
+                                                        <label>Photo</label>
                                                         <input type="file" name="photo" class="form-control" value="<?=$photo?>">
                                                     </div>
                                                     <div class="form-group">
