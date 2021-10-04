@@ -106,6 +106,8 @@
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".ModalSection">New Section</button>
                             <div class="card">
                                 <div class="bootstrap-data-table-panel">
                                     <div class="table-responsive">
@@ -113,11 +115,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>S/N</th>
-                                                    <th>Student ID#</th>
-                                                    <th>Name</th>
-                                                    <th>Bill</th>
-                                                    <th>Paid</th>
-                                                    <th>Balance</th>
+                                                    <th>Section </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -128,11 +126,7 @@
                                                         <tr>
                                                             <td></td>
                                                             <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
+                                                            <td></td>                                                        
                                                         </tr>";
                                                     }else{
                                                         foreach($data as $r){
@@ -144,17 +138,11 @@
                                                             
                                                             echo"<tr>
                                                                     <td>{$n}</td>
-                                                                    <td>{$r['student_num']}</td>
-                                                                    <td>{$r['full_name']}</td>
-                                                                    <td>{$r['bill']}</td>
-                                                                    <td>{$r['paid']}</td>
-                                                                    <td>{$r['bal']}</td>
+                                                                    <td>{$r['session_name']}</td>
                                                                     <td>
-                                                                        <a href='?_admin=ledger.details&id={$r['student_id']}&token={$_GET['token']}' class='btn btn-xs btn-danger'>View</a>
+                                                                    <a href='?_submit=delete&action=section&id={$r['st_class_type_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>
                                                                 </tr>";
-    
-
                                                         }
                                                     }
                                                 ?>

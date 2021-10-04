@@ -20,10 +20,12 @@ switch($_REQUEST['_admin']){
             );
         }
         $data = fees::fetch_ledger($conn);
+        $temp['title'] =" Welcome to AGS";
         require("template/dashboard.php");
     break;
 
     case"profile";
+        $temp['title'] ="Student Profile";
         $data = student::fetch_active($conn);
         require("template/profile.list.php");
     break;
@@ -40,6 +42,7 @@ switch($_REQUEST['_admin']){
         $photo = "";
         $status ="";
         $btn = "add-new-profile";
+        $temp['title'] ="New Profile";
         require("template/add.profile.php");
     break;
 
@@ -57,6 +60,7 @@ switch($_REQUEST['_admin']){
         $status = $data['status_id'];
         $_SESSION['sudent_id'] = $data['student_id'];
         $btn = "update-profile";
+        $temp['title'] ="Update Profile ".$fullname;
         require("template/add.profile.php");
     break;
 
@@ -76,16 +80,19 @@ switch($_REQUEST['_admin']){
         $btn = "update-profile";
         $assign = student::view_assign_batch($conn,$_GET['id']);
         $ledger = fees::fetch_view_ledger($conn,$_GET['id']);
+        $temp['title'] ="Profile ".$fullname;
         require("template/view.profile.php");
     break;
 
     case"archive";
         $data = student::fetch_passive($conn);
+        $temp['title'] ="Archive ";
         require("template/profile.list.php");
     break;
 
     case"ledger";
         $data = fees::fetch_ledger($conn);
+        $temp['title'] ="Ledger ";
         require("template/ledger.php");
     break;
 
@@ -99,26 +106,37 @@ switch($_REQUEST['_admin']){
             );
         }
         $data = fees::fetch_view_ledger($conn,$_GET['id']);
+        $temp['title'] ="Ledger";
         require("template/ledger.details.php");
     break;
 
     case"billing";
         $data = fees::fetch_bill($conn);  
+        $temp['title'] ="Billing";
         require("template/billing.php");
     break;
 
     case"payment";
         $data = fees::fetch_payment($conn);
+        $temp['title'] ="Payment";
         require("template/payment.php");
     break;
 
     case"class";
         $data = grade::fetch($conn);
+        $temp['title'] ="Grade";
         require("template/grade.php");
+    break;
+
+    case"class.section";
+        $data = grade::fetch_section($conn);
+        $temp['title'] ="Section";
+        require("template/section.php");
     break;
 
     case"assign.class";
         $data = student::assign_batch($conn);
+        $temp['title'] ="Assign Student to Class ";
         require("template/batch.php");
     break;
 

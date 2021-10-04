@@ -3,6 +3,7 @@
 $GLOBALS = config();
 $student = student::fetch_active($conn);
 $class =  grade::fetch($conn);
+$sections = grade::fetch_section($conn);
 
 function config(){
 
@@ -88,6 +89,13 @@ function combo_class($class){
 
     foreach($class as $r){
         echo"<option value='{$r['grade_id']}'>{$r['grade']}</option>";
+    }
+}
+
+function combo_section($sections){
+
+    foreach($sections as $r){
+        echo"<option value='{$r['session_name']}'>{$r['session_name']}</option>";
     }
 }
 

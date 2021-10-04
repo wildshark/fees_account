@@ -118,6 +118,11 @@ if(!isset($_SESSION['time'])){
                     exit();
                 break;
 
+                case"add-section";
+                    $string = $_REQUEST['section'];
+                    $response = grade::add_section($conn,$string);
+                break;
+
                 case"delete";
                    if($_REQUEST['action'] === "student"){
                        $response = student::delete($conn,$_GET['id']);
@@ -128,6 +133,8 @@ if(!isset($_SESSION['time'])){
                         $response = grade::delete($conn,$_GET['id']);
                    }elseif($_REQUEST['action'] === "batch"){
                         $response = student:: delete_assign_batch($conn,$_GET['id']);
+                   }elseif ($_REQUEST['action'] === "section") {
+                       $response = grade::delete_section($conn,$_GET['id']);
                    }
                 break;
             }

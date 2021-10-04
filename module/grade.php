@@ -36,6 +36,33 @@ class grade{
         return $stmt->fetchAll();
     }
 
+    public static function add_section($conn,$string){
+
+        $sql ="INSERT INTO 'main'.'st_class_type'('session_name') VALUES (?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$string);
+        return $stmt->execute();
+
+    }
+
+    public static function fetch_section($conn){
+
+        $sql ="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'st_class_type' LIMIT 0,1000";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
+    }
+
+    public static function delete_section($conn,$id){
+
+        $sql="DELETE FROM 'main'.'st_class_type' WHERE rowid = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$id);
+        return $stmt->execute();
+    }
+
     
 }
 
