@@ -163,7 +163,7 @@
                             <!-- /# card -->
                         </div>
                         <!-- /# column -->
-                        <?=require("model.php")?>
+                        <?php require("model.php")?>
                     </div>
                     <!-- /# row -->
 

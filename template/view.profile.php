@@ -395,6 +395,7 @@
 										</div>
 									</div>
 								</div>
+                <?php require("model.php")?>
 						</div>
           <div class="row">
             <div class="col-lg-12">

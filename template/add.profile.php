@@ -171,6 +171,7 @@
                             </div>
                         </div>
                         <!-- /# column -->
+                        <?php require("model.php")?>
                     </div>
                     <!-- /# row -->
                     <div class="row">

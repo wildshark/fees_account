@@ -75,9 +75,6 @@
         </div>
     </div>
 
-
-
-
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -208,8 +205,6 @@
                                                                         <a href='?_submit=delete&action=ledger&id={$r['ledger_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>
                                                                 </tr>";
-    
-
                                                         }
                                                     }
                                                 ?>
@@ -221,7 +216,7 @@
                             <!-- /# card -->
                         </div>
                         <!-- /# column -->
-                        <?=require("model.php")?>
+                        <?php require("model.php")?>
                     </div>
                     <!-- /# row -->
 
