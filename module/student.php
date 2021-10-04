@@ -95,9 +95,19 @@ class student{
         return $stmt->fetchAll();
     }
 
+    public static function view_assign_batch($conn,$id){
+
+        $sql="SELECT * FROM 'main'.'get_student_assign' WHERE student_id=? LIMIT 0,1000";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$id);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     public static function add_assign_batch($conn,$r){
 
-        $sql ="INSERT INTO 'main'.'student_assign_batch'('student_id', 'class_id', 'st_class_type_id', 'acad_id', 'tran_date', 'fees') VALUES (?,?,?,?,?,?)";
+        $sql ="INSERT INTO 'main'.'student_assign_batch'('student_id', 'class_id', 'st_class_type_id', 'acad_id', 'tran_date','term_id', 'fees') VALUES (?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$r[0]);
         $stmt->bindParam(2,$r[1]);
@@ -105,8 +115,17 @@ class student{
         $stmt->bindParam(4,$r[3]);
         $stmt->bindParam(5,$r[4]);
         $stmt->bindParam(6,$r[5]);
+        $stmt->bindParam(7,$r[6]);
         return $stmt->execute();
                
+    }
+
+    public static function delete_assign_batch($conn,$id){
+
+        $sql="DELETE FROM 'main'.'student_assign_batch' WHERE rowid =?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$id);
+        return $stmt->execute();
     }
 }
 

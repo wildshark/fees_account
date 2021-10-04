@@ -211,7 +211,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Fees Amount</label>
-                                <input type="text" name="class-section" class="form-control" placeholder="0.00">
+                                <input type="text" name="amount" class="form-control" placeholder="0.00">
                             </div>
                         </div>    
                         <div class="modal-footer">

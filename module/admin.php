@@ -74,6 +74,8 @@ switch($_REQUEST['_admin']){
         $status = $data['status_id'];
         $_SESSION['sudent_id'] = $data['student_id'];
         $btn = "update-profile";
+        $assign = student::view_assign_batch($conn,$_GET['id']);
+        $ledger = fees::fetch_view_ledger($conn,$_GET['id']);
         require("template/view.profile.php");
     break;
 

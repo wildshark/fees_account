@@ -178,40 +178,7 @@
                     <p class="trial-day">30 Days Trail</p>
                   </div>
                   <div class="dropdown-content-body">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i class="ti-user"></i>
-                          <span>Profile</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <i class="ti-email"></i>
-                          <span>Inbox</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="ti-settings"></i>
-                          <span>Setting</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <i class="ti-lock"></i>
-                          <span>Lock Screen</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="ti-power-off"></i>
-                          <span>Logout</span>
-                        </a>
-                      </li>
-                    </ul>
+                    <?=profile_menu($_GET['token'])?>
                   </div>
                 </div>
               </div>
@@ -324,7 +291,7 @@
 											<ul class="nav nav-pills m-t-30 m-b-30">
 												<li class=" nav-item"> <a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Class Assign</a> </li>
 												<li class="nav-item"> <a href="#navpills-2" class="nav-link" data-toggle="tab" aria-expanded="false">Fee Transaction</a> </li>
-												<li class="nav-item"> <a href="#navpills-3" class="nav-link" data-toggle="tab" aria-expanded="true">Tab Three</a> </li>
+												<!--li class="nav-item"> <a href="#navpills-3" class="nav-link" data-toggle="tab" aria-expanded="true">Tab Three</a> </li-->
 											</ul>
 											<div class="tab-content br-n pn">
 												<div id="navpills-1" class="tab-pane active">
@@ -333,61 +300,31 @@
                               <table class="table table-hover ">
                                 <thead>
                                   <tr>
-                                    <th>Name</th>
-                                    <th>Status</th>
                                     <th>Date</th>
-                                    <th>Price</th>
+                                    <th>Academic Yrs.</th>
+                                    <th>Term</th>
+                                    <th>Grade</th>
+                                    <th>Fees</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Man</td>
-                                    <td>
-                                      <span class="badge badge-primary">Ongoing</span>
-                                    </td>
-                                    <td>January 22</td>
-                                    <td class="color-primary">$21.56</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Women</td>
-                                    <td>
-                                      <span class="badge badge-success">Complete</span>
-                                    </td>
-                                    <td>January 30</td>
-                                    <td class="color-success">$55.32</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Blue Backpack For Baby</td>
-                                    <td>
-                                      <span class="badge badge-danger">Rejected</span>
-                                    </td>
-                                    <td>January 25</td>
-                                    <td class="color-danger">$14.85</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Man</td>
-                                    <td>
-                                      <span class="badge badge-primary">Ongoing</span>
-                                    </td>
-                                    <td>January 22</td>
-                                    <td class="color-primary">$21.56</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Women</td>
-                                    <td>
-                                      <span class="badge badge-success">Complete</span>
-                                    </td>
-                                    <td>January 30</td>
-                                    <td class="color-success">$55.32</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Blue Backpack For Baby</td>
-                                    <td>
-                                      <span class="badge badge-danger">Rejected</span>
-                                    </td>
-                                    <td>January 25</td>
-                                    <td class="color-danger">$14.85</td>
-                                  </tr>
+                                  <?php
+                                    if((!isset($assign))||($assign == false)){
+                                      echo"";
+                                    }else{
+
+                                      foreach($assign as $r){
+                                          echo" 
+                                          <tr>
+                                            <td>{$r['tran_date']}</td>
+                                            <td>{$r['acad_id']}</td>
+                                            <td>{$r['term']}</td>
+                                            <td>{$r['grade']}</td>
+                                            <td>{$r['fees']}</td>
+                                          </tr>";
+                                      }
+                                    }
+                                  ?>
                                 </tbody>
                               </table>
                             </div>
@@ -399,61 +336,47 @@
                               <table class="table table-hover ">
                                 <thead>
                                   <tr>
-                                    <th>Name</th>
-                                    <th>Status</th>
                                     <th>Date</th>
-                                    <th>Price</th>
+                                    <th>Ref</th>
+                                    <th>Academic Yrs.</th>
+                                    <th>Details</th>
+                                    <th>Term</th>
+                                    <th>Grade</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Man</td>
-                                    <td>
-                                      <span class="badge badge-primary">Ongoing</span>
-                                    </td>
-                                    <td>January 22</td>
-                                    <td class="color-primary">$21.56</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Women</td>
-                                    <td>
-                                      <span class="badge badge-success">Complete</span>
-                                    </td>
-                                    <td>January 30</td>
-                                    <td class="color-success">$55.32</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Blue Backpack For Baby</td>
-                                    <td>
-                                      <span class="badge badge-danger">Rejected</span>
-                                    </td>
-                                    <td>January 25</td>
-                                    <td class="color-danger">$14.85</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Man</td>
-                                    <td>
-                                      <span class="badge badge-primary">Ongoing</span>
-                                    </td>
-                                    <td>January 22</td>
-                                    <td class="color-primary">$21.56</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kolor Tea Shirt For Women</td>
-                                    <td>
-                                      <span class="badge badge-success">Complete</span>
-                                    </td>
-                                    <td>January 30</td>
-                                    <td class="color-success">$55.32</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Blue Backpack For Baby</td>
-                                    <td>
-                                      <span class="badge badge-danger">Rejected</span>
-                                    </td>
-                                    <td>January 25</td>
-                                    <td class="color-danger">$14.85</td>
-                                  </tr>
+                                  <?php
+                                      if((!isset($ledger))||($ledger== false)){
+                                        echo"";
+                                      }else{
+
+                                        foreach($ledger as $r){
+
+                                          if($r['pay_type'] == "Bill"){
+                                            $css ="text-danger";
+                                          }elseif(($r['pay_type'] == "Cash")||($r['pay_type'] == "Bank")){
+                                            $css ="text-success";
+                                          }else {
+                                            $css="";
+                                          }
+
+                                          $amt = number_format($r['bill'] + $r['paid'],2);
+                                            echo" 
+                                            <tr>
+                                              <td>{$r['tran_date']}</td>
+                                              <td>{$r['ref']}</td>
+                                              <td>{$r['acad_yr']}</td>
+                                              <td>{$r['details']}</td>
+                                              <td>{$r['term']}</td>
+                                              <td>{$r['grade']}</td>
+                                              <td class='{$css}'>{$r['pay_type']}</td>
+                                              <td>{$amt}</td>
+                                            </tr>";
+                                        }
+                                      }
+                                    ?>
                                 </tbody>
                               </table>
                             </div>

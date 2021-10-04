@@ -108,11 +108,11 @@ if(!isset($_SESSION['time'])){
                     $r[] = $_REQUEST['academic-year'];
                     $r[] = $_REQUEST['date'];
                     $r[] = $_REQUEST['term'];
+                    $r[] = $_REQUEST['amount'];
                     $response = student::add_assign_batch($conn,$r);
                 break;
 
                 case"delete";
-
                    if($_REQUEST['action'] === "student"){
                        $response = student::delete($conn,$_GET['id']);
                        //$response = fees::delete($conn,$_GET['id']);
@@ -120,6 +120,8 @@ if(!isset($_SESSION['time'])){
                         $response = fees::delete($conn,$_GET['id']);
                    }elseif($_REQUEST['action'] === "grade"){
                         $response = grade::delete($conn,$_GET['id']);
+                   }elseif($_REQUEST['action'] === "batch"){
+                        $response = student:: delete_assign_batch($conn,$_GET['id']);
                    }
                 break;
             }

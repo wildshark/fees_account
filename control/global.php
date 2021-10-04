@@ -13,6 +13,25 @@ function config(){
     );
 }
 
+function profile_menu($token){
+
+    return"
+    <ul>
+        <li>
+        <a href='?_admin=user.profile&token={$token}'>
+            <i class='ti-user'></i>
+            <span>Profile</span>
+        </a>
+        </li>                
+        <li>
+        <a href'?_user=user-exit-app'>
+            <i class='ti-power-off'></i>
+            <span>Logout</span>
+        </a>
+        </li>
+    </ul>";
+}
+
 
 function menu($token){
 
@@ -21,7 +40,7 @@ function menu($token){
         <div class='logo'><a href='index.html'>
                 <!-- <img src='assets/images/logo.png' alt='' /> --><span>Fees Account</span></a></div>
       
-        
+        <li><a href='?_admin=dashboard&token={$token}'><i class='ti-close'></i>Dashboard</a></li>
         <li><a class='sidebar-sub-toggle'><i class='ti-panel'></i> Student <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
