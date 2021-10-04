@@ -15,19 +15,19 @@ function config(){
 
 function profile_menu($token){
 
-    return"
+    echo"
     <ul>
         <li>
-        <a href='?_admin=user.profile&token={$token}'>
-            <i class='ti-user'></i>
-            <span>Profile</span>
-        </a>
+            <a href='?_admin=user.profile&token={$token}'>
+                <i class='ti-user'></i>
+                <span>Profile</span>
+            </a>
         </li>                
         <li>
-        <a href'?_user=user-exit-app'>
-            <i class='ti-power-off'></i>
-            <span>Logout</span>
-        </a>
+            <a href'?_admin=user.profile&token={$token}'>
+                <i class='ti-power-off'></i>
+                <span>Logout</span>
+            </a>
         </li>
     </ul>";
 }
