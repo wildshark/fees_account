@@ -58,7 +58,7 @@
                                 <span class="user-avatar"><?=$_SESSION['username']?>
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
-                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                 <!--div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-content-heading">
                                         <span class="text-left">Upgrade Now</span>
                                         <p class="trial-day">30 Days Trail</p>
@@ -66,7 +66,7 @@
                                     <div class="dropdown-content-body">
                                     <?=profile_menu($_GET['token'])?>
                                     </div>
-                                </div>
+                                </div-->
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                 <!-- /# row -->
                 <section id="main-content">
                 <div class="row">
-                        <div class="col-lg-3">
+                        <!--div class="col-lg-3">
                             <div class="card">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div-->
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="stat-widget-one">
@@ -254,7 +254,7 @@
     <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/datatables-init.js"></script>
-
+    <script src="//code.tidio.co/nly9grpb4uzwqbkhetse6a6ohjgyoqt9.js" async></script>
 </body>
 
 </html>

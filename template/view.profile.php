@@ -55,15 +55,15 @@
                 <span class="user-avatar"><?=$_SESSION['username']?>
                   <i class="ti-angle-down f-s-10"></i>
                 </span>
-                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
-                  <div class="dropdown-content-heading">
-                    <span class="text-left">Upgrade Now</span>
-                    <p class="trial-day">30 Days Trail</p>
-                  </div>
-                  <div class="dropdown-content-body">
-                    <?=profile_menu($_GET['token'])?>
-                  </div>
-                </div>
+                 <!--div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">Upgrade Now</span>
+                                        <p class="trial-day">30 Days Trail</p>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                    <?=profile_menu($_GET['token'])?>
+                                    </div>
+                                </div-->
               </div>
             </div>
           </div>

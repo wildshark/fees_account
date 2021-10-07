@@ -22,6 +22,19 @@ class user_account{
         return $stmt->execute();
     }
 
+    public static function reset_user($conn){
+
+        $sql="DELETE FROM user_account";
+        $stmt = $conn->prepare($sql);
+        return $stmt->execute();
+    }
+
+    public static function backup_user($conn){
+        $sql="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'user_account";
+        $stmt = $conn->prepare($sql);
+        return $stmt->execute();
+    }
+
 }
 
 ?>

@@ -12,7 +12,7 @@ switch($_REQUEST['_admin']){
             $total = $student['total'];
         }
         $ledger = fees::summary_ledger($conn);
-        if($ledger == false){
+        if((!isset($ledger))||($ledger == false)){
             $ledger = array(
                 "bill"=>"0.00",
                 "paid"=>"0.00",
@@ -138,6 +138,33 @@ switch($_REQUEST['_admin']){
         $data = student::assign_batch($conn);
         $temp['title'] ="Assign Student to Class ";
         require("template/batch.php");
+    break;
+
+    case"reset";
+        $response = student::reset_user($conn);
+        $response = student::reset_assign_batch($conn);
+        $response = grade::reset_class($conn);
+        $response = grade::reset_section($conn);
+        $response = fees::reset_ledger($conn);
+        header("location: ?_reset=reset-application");
+        exit();
+    break;
+
+    case"backup";
+        $backup = array(
+            "student"=>student::backup_student($conn),
+            "section"=>student::backup_batch($conn),
+            "ledger"=>fees::fetch_ledger($conn),
+            "grade"=>grade::fetch($conn),
+
+        );
+        $data=json_encode($backup);
+        $data = base64_encode(gzcompress($data,9));
+        $zcompress = array(
+            "time"=> date('d-m-Y H:i:s'),
+            "data"=>$data
+        );
+        file_put_contents("backup.json",json_encode($zcompress));
     break;
 
     default;

@@ -57,7 +57,7 @@
                                 <span class="user-avatar"><?=$_SESSION['username']?>
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
-                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                 <!--div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-content-heading">
                                         <span class="text-left">Upgrade Now</span>
                                         <p class="trial-day">30 Days Trail</p>
@@ -65,7 +65,7 @@
                                     <div class="dropdown-content-body">
                                     <?=profile_menu($_GET['token'])?>
                                     </div>
-                                </div>
+                                </div-->
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                                                     <th>Section</th>
                                                     <th>Student ID</th>
                                                     <th>Full Name</th>
-                                                    <th>Fees</th>
+                                                   
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -132,7 +132,7 @@
                                                             <td></td>  
                                                             <td></td>  
                                                             <td></td>  
-                                                            <td></td>                                                        
+                                                                                                                   
                                                         </tr>";
                                                     }else{
                                                         foreach($data as $r){
@@ -149,7 +149,7 @@
                                                                     <td>{$r['st_class_type_id']}</td>
                                                                     <td>{$r['student_num']}</td>
                                                                     <td>{$r['full_name']}</td>                                                                    
-                                                                    <td>{$r['fees']}</td>
+                                                                   
                                                                     <td>
                                                                         <a href='?_submit=delete&action=batch&id={$r['stud_assig_id']}' class='btn btn-xs btn-danger'>Delete</a>
                                                                     </td>

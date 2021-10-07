@@ -127,6 +127,42 @@ class student{
         $stmt->bindParam(1,$id);
         return $stmt->execute();
     }
+
+    
+    public static function reset_student($conn){
+
+        $sql="DELETE FROM student_profile";
+        $stmt = $conn->prepare($sql);
+        return $stmt->execute();
+    }
+
+    public static function reset_assign_batch($conn){
+
+        $sql="DELETE FROM student_assign_batch";
+        $stmt = $conn->prepare($sql);
+        return $stmt->execute();
+    }
+
+    public static function backup_student($conn){
+
+        $sql="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'student_profile'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
+    }
+
+    public static function backup_batch($conn){
+
+        $sql="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'student_assign_batch'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+
 }
 
 ?>

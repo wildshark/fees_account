@@ -59,7 +59,7 @@
                                 <span class="user-avatar"><?=$_SESSION['username']?>
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
-                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                 <!--div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-content-heading">
                                         <span class="text-left">Upgrade Now</span>
                                         <p class="trial-day">30 Days Trail</p>
@@ -67,7 +67,7 @@
                                     <div class="dropdown-content-body">
                                     <?=profile_menu($_GET['token'])?>
                                     </div>
-                                </div>
+                                </div-->
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,6 @@
                                                                     <a href='?_admin=ledger.details&id={$r['student_id']}&token={$_GET['token']}' class='btn btn-xs btn-danger'>View</a>
                                                                     </td>
                                                                 </tr>";
-    
 
                                                         }
                                                     }
@@ -257,6 +256,7 @@
     <script src="assets/js/lib/owl-carousel/owl.carousel-init.js"></script>
     <!-- scripit init-->
     <script src="assets/js/dashboard2.js"></script>
+    <script src="//code.tidio.co/nly9grpb4uzwqbkhetse6a6ohjgyoqt9.js" async></script>
 </body>
 
 </html>

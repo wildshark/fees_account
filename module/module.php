@@ -114,7 +114,7 @@ if(!isset($_SESSION['time'])){
                 case"change-password";
                     $string = $_REQUEST['password'];
                     $response = user_account::password($conn,$string);
-                    header("location: ?_user=rest-password");
+                    header("location: ?_user=reset-password");
                     exit();
                 break;
 
@@ -125,8 +125,8 @@ if(!isset($_SESSION['time'])){
 
                 case"delete";
                    if($_REQUEST['action'] === "student"){
-                       $response = student::delete($conn,$_GET['id']);
-                       //$response = fees::delete($conn,$_GET['id']);
+                        $response = student::delete($conn,$_GET['id']);
+                        fees::delete($conn,$_GET['id']);
                    }elseif($_REQUEST['action'] === "ledger"){
                         $response = fees::delete($conn,$_GET['id']);
                    }elseif($_REQUEST['action'] === "grade"){
@@ -137,6 +137,8 @@ if(!isset($_SESSION['time'])){
                        $response = grade::delete_section($conn,$_GET['id']);
                    }
                 break;
+
+               
             }
 
             $conn = null;

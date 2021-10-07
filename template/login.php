@@ -39,7 +39,7 @@
                             <a href="index.html"><span><?=$GLOBALS['header']?></span></a>
                         </div>
                         <div class="login-form">
-                            <h4>Administratior Login</h4>
+                            <h4>Administrator Login</h4>
                             <form action="index.php" method="post">
                                 <div class="form-group">
                                     <label>Username</label>

@@ -63,6 +63,20 @@ class grade{
         return $stmt->execute();
     }
 
+    public static function reset_class($conn){
+
+        $sql="DELETE FROM st_class_type";
+        $stmt = $conn->prepare($sql);
+        return $stmt->execute();
+    }
+
+    public static function reset_section($conn){
+
+        $sql="DELETE FROM class_grade";
+        $stmt = $conn->prepare($sql);
+        return $stmt->execute();
+    }
+
     
 }
 

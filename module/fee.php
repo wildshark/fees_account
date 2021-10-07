@@ -101,6 +101,15 @@ class fees{
         $stmt->bindParam(1,$id);
         return $stmt->execute();
     }
+
+    public static function reset_ledger($conn){
+
+        $sql="DELETE FROM fee_ledger";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
 }
 
 

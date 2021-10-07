@@ -65,10 +65,11 @@ function menu($token){
         </li>
         <li><a href='#' data-toggle='modal' data-target='.ModalPassword'><i class='ti-unlock'></i>user</a></li>
         <li><a href='?_user=user-exit-app'><i class='ti-power-off'></i>Logout</a></li>
-        <!--li><a class='sidebar-sub-toggle'><i class='ti-heart'></i> Icons <span
+        <li><a class='sidebar-sub-toggle'><i class='ti-heart'></i> Setting <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
-                <li><a href='font-themify.html'>Themify</a></li>
+                <li><a href='?_admin=reset&token={$token}'>Reset</a></li>
+                <li><a href='?_admin=backup&token={$token}'>Backup</a></li>
             </ul>
         </li-->
     </ul>";
