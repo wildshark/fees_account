@@ -77,12 +77,19 @@ class grade{
         return $stmt->execute();
     }
 
-    public static function backup_grade($conn){
+    public static function restore_grade($conn,$grade){
 
-        $sql ="";
+        foreach($grade as $r){
+            $sql="INSERT INTO 'main'.'class_grade'('grade_id','grade') VALUES (?,?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1,$r['grade_id']);
+            $stmt->bindParam(2,$r['grade']);
+            $response = $stmt->execute();
+        }
+       return $response;
     }
 
-    
+   
 }
 
 ?>

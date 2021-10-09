@@ -162,6 +162,42 @@ class student{
         return $stmt->fetchAll();
     }
 
+    public static function restore_student($conn,$student){
+
+        foreach($student as $r){
+                
+            $sql="INSERT INTO 'main'.'student_profile'('student_id','student_num', 'full_name', 'gender', 'dob', 'nationality', 'contact_address', 'gname', 'gmobile', 'photo', 'status_id') VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1,$r['student_id']);
+            $stmt->bindParam(2,$r['student_num']);
+            $stmt->bindParam(3,$r['full_name']);
+            $stmt->bindParam(4,$r['gender']);
+            $stmt->bindParam(5,$r['dob']);
+            $stmt->bindParam(6,$r['nationality']);
+            $stmt->bindParam(7,$r['contact_address']);
+            $stmt->bindParam(8,$r['gname']);
+            $stmt->bindParam(9,$r['gmobile']);
+            $stmt->bindParam(10,$r['photo']);
+            $stmt->bindParam(11,$r['status_id']);
+            $restore = $stmt->execute();
+        }
+
+        return $restore;
+    }
+
+    public static function restore_section($conn,$section){
+
+        foreach($section as $r){
+
+            $sql ="INSERT INTO 'main'.'st_class_type'('st_class_type_id','session_name') VALUES (?,?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1,$r['st_class_type_id']);
+            $stmt->bindParam(2,$r['session_name']);
+            $response = $stmt->execute();
+        }
+       
+        return $response;
+    }
 
 }
 

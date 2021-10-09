@@ -141,7 +141,7 @@ switch($_REQUEST['_admin']){
     break;
 
     case"reset";
-        $response = student::reset_user($conn);
+        $response = student::reset_student($conn);
         $response = student::reset_assign_batch($conn);
         $response = grade::reset_class($conn);
         $response = grade::reset_section($conn);
@@ -165,6 +165,23 @@ switch($_REQUEST['_admin']){
             "data"=>$data
         );
         file_put_contents("backup.json",json_encode($zcompress));
+    break;
+
+    case"restore";
+        $dat = json_decode(file_get_contents("backup.json"),TRUE);
+        $data = gzuncompress(base64_decode($dat['data']));
+        $data = json_decode($data, TRUE);
+        $student = $data["student"];
+        $section = $data["section"];
+        $ledger = $data["ledger"];
+        $grade = $data["grade"];
+
+        $response = student::restore_student($conn,$student);
+        $response = grade::restore_grade($conn,$grade);
+        $response = student::restore_section($conn,$section);
+            
+      /// var_dump($data);
+        //    exit;
     break;
 
     default;

@@ -69,6 +69,7 @@ function menu($token){
             <ul>
                 <li><a href='?_admin=reset&token={$token}'>Reset</a></li>
                 <li><a href='?_admin=backup&token={$token}'>Backup</a></li>
+                <li><a href='?_admin=restore&token={$token}'>Restore</a></li>
             </ul>
         </li-->
     </ul>";

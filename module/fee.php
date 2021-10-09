@@ -108,6 +108,30 @@ class fees{
         $stmt = $conn->prepare($sql);
         return $stmt->execute();
     }
+
+    public static function restore_ledger($conn,$ledger){
+
+        foreach($ledger as $r){
+
+            $sql ="INSERT INTO 'main'.'fee_ledger'('ledger_id','student_id', 'tran_date', 'ref', 'class_id', 'term_id', 'acad_yr', 'details', 'pay_type', 'bill','paid') VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1,$r['ledger_id']);
+            $stmt->bindParam(2,$r['student_id']);
+            $stmt->bindParam(3,$r['tran_date']);
+            $stmt->bindParam(4,$r['ref']);
+            $stmt->bindParam(5,$r['class_id']);
+            $stmt->bindParam(6,$r['term_id']);
+            $stmt->bindParam(7,$r['acad_yr']);
+            $stmt->bindParam(8,$r['details']);
+            $stmt->bindParam(9,$r['pay_type']);
+            $stmt->bindParam(10,$r['bill']);
+            $stmt->bindParam(11,$r['paid']);
+
+            return $stmt->execute();
+
+        }
+        
+    }
 }
 
 
