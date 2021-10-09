@@ -9,7 +9,7 @@ function config(){
 
     return array(
         "application"=>"Fees Record",
-        "header"=>"Fees Record",
+        "header"=>"AGS Fees Record",
         "copyright"=>"Copyright © Active A&T Corp. &amp; Developed by <a href='http://iquipedigital.com' target='_blank'>iQuipe Digital</a> 2021"
     );
 }
@@ -38,7 +38,10 @@ function menu($token){
     echo"
     <ul>
         <div class='logo'><a href='#'>
-                <!-- <img src='assets/images/logo.png' alt='' /> --><span>Fees Account</span></a></div>
+            <img  src='assets/images/logo.png' alt='' />
+            </br>
+            <span>Fees Account</span></a>
+        </div>
       
         <li><a href='?_admin=dashboard&token={$token}'><i class='ti-desktop'></i>Dashboard</a></li>
         <li><a class='sidebar-sub-toggle'><i class='ti-user'></i> Student <span
@@ -97,9 +100,9 @@ function combo_section($sections){
 }
 
 function msgbox($err){
-
+    $default = true;
+    
     switch($err){
-
         case 100:
             $css ="alert-danger";
             $msg ="<strong class='text-muted'> Action Failed. </strong>";
@@ -131,18 +134,22 @@ function msgbox($err){
         break;
 
         default:
+            $default = false;
             $css ="alert-primary";
-            $msg ="<strong class='text-muted'>Welcome !</strong>";
+            $msg ="<strong class='text-muted'>Welcome AGS!</strong>";
 
     }
 
-
-    return"
-        <div class='alert {$css} alert-dismissible fade show'>
-            <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-            {$msg}
-        </div>
-    ";
+    if($default == false){
+        return "";
+    }else{
+        return"
+            <div class='alert {$css} alert-dismissible fade show'>
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                {$msg}
+            </div>
+        ";
+    }
 }
 
 ?>

@@ -36,10 +36,9 @@
                 <div class="col-lg-6">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="index.html"><span><?=$GLOBALS['header']?></span></a>
+                            <a href="#"><img  src='assets/images/logo.png' alt='' /></br><span><?=$GLOBALS['header']?></span></a>
                         </div>
                         <div class="login-form">
-                            <h4>Administrator Login</h4>
                             <form action="index.php" method="post">
                                 <div class="form-group">
                                     <label>Username</label>
