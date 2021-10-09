@@ -179,9 +179,6 @@ switch($_REQUEST['_admin']){
         $response = student::restore_student($conn,$student);
         $response = grade::restore_grade($conn,$grade);
         $response = student::restore_section($conn,$section);
-            
-      /// var_dump($data);
-        //    exit;
     break;
 
     default;
