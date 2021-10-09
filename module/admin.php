@@ -13,11 +13,9 @@ switch($_REQUEST['_admin']){
         }
         $ledger = fees::summary_ledger($conn);
         if((!isset($ledger))||($ledger == false)){
-            $ledger = array(
-                "bill"=>"0.00",
-                "paid"=>"0.00",
-                "bal"=>"0.00"
-            );
+            $ledger["bill"] ="0.00";
+            $ledger["paid"] ="0.00";
+            $ledger["bal"] ="0.00";
         }
         $data = fees::fetch_ledger($conn);
         $temp['title'] =" Welcome to AGS";
@@ -100,9 +98,9 @@ switch($_REQUEST['_admin']){
         $summary = fees::student_ledger_sum($conn,$_GET['id']);
         if($summary == false){
             $summary = array(
-                "bill"=>0,
-                "paid"=>0,
-                "bal"=>0
+                "bill"=>"0.00",
+                "paid"=>"0.00",
+                "bal"=>"0.00"
             );
         }
         $data = fees::fetch_view_ledger($conn,$_GET['id']);
@@ -164,11 +162,16 @@ switch($_REQUEST['_admin']){
             "time"=> date('d-m-Y H:i:s'),
             "data"=>$data
         );
-        file_put_contents("backup.json",json_encode($zcompress));
+        file_put_contents("backup/backup.json",json_encode($zcompress));
+        if (!is_readable("backup/backup.json")) {
+            header("location: ?_admin=dashboard&token={$_GET['token']}&err120");
+        }else{
+            header("location: ?_admin=dashboard&token={$_GET['token']}&err220");
+        }
     break;
 
     case"restore";
-        $dat = json_decode(file_get_contents("backup.json"),TRUE);
+        $dat = json_decode(file_get_contents("backup/backup.json"),TRUE);
         $data = gzuncompress(base64_decode($dat['data']));
         $data = json_decode($data, TRUE);
         $student = $data["student"];
@@ -179,6 +182,12 @@ switch($_REQUEST['_admin']){
         $response = student::restore_student($conn,$student);
         $response = grade::restore_grade($conn,$grade);
         $response = student::restore_section($conn,$section);
+
+        if($response == false){
+            header("location: ?_admin=dashboard&token={$_GET['token']}&err120");
+        }else{
+            header("location: ?_admin=dashboard&token={$_GET['token']}&err220");
+        }
     break;
 
     default;
