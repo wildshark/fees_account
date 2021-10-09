@@ -34,7 +34,7 @@ class student{
 
     public static function update($conn,$r){
 
-        $sql ="UPDATE 'main'.'student_profile' SET 'student_num' =?, 'full_name' = ?, 'gender' = ?, 'dob' = ?, 'nationality' = ?, 'contact_address' = ?, 'gname' = ?, 'gmobile' = ?, 'photo' = ?, 'status_id' =? WHERE rowid = ?";
+        $sql ="UPDATE 'main'.'student_profile' SET 'student_num' =?, 'full_name' = ?, 'gender' = ?, 'dob' = ?, 'nationality' = ?, 'contact_address' = ?, 'gname' = ?, 'gmobile' = ?, 'status_id' =? WHERE rowid = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$r[0]);
         $stmt->bindParam(2,$r[1]);
@@ -46,7 +46,7 @@ class student{
         $stmt->bindParam(8,$r[7]);
         $stmt->bindParam(9,$r[8]);
         $stmt->bindParam(10,$r[9]);
-        $stmt->bindParam(11,$r[10]);
+
         return $stmt->execute();
     }
 
@@ -83,6 +83,7 @@ class student{
         $sql="DELETE FROM 'main'.'student_profile' WHERE rowid =?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$id);
+
         return $stmt->execute();
     }
 
@@ -116,8 +117,8 @@ class student{
         $stmt->bindParam(5,$r[4]);
         $stmt->bindParam(6,$r[5]);
         $stmt->bindParam(7,$r[6]);
+
         return $stmt->execute();
-               
     }
 
     public static function delete_assign_batch($conn,$id){
@@ -125,6 +126,7 @@ class student{
         $sql="DELETE FROM 'main'.'student_assign_batch' WHERE rowid =?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$id);
+
         return $stmt->execute();
     }
 
@@ -133,6 +135,7 @@ class student{
 
         $sql="DELETE FROM student_profile";
         $stmt = $conn->prepare($sql);
+
         return $stmt->execute();
     }
 
@@ -140,6 +143,7 @@ class student{
 
         $sql="DELETE FROM student_assign_batch";
         $stmt = $conn->prepare($sql);
+
         return $stmt->execute();
     }
 
@@ -150,7 +154,6 @@ class student{
         $stmt->execute();
 
         return $stmt->fetchAll();
-
     }
 
     public static function backup_batch($conn){
@@ -198,7 +201,6 @@ class student{
        
         return $response;
     }
-
 }
 
 ?>

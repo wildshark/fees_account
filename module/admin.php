@@ -84,7 +84,7 @@ switch($_REQUEST['_admin']){
 
     case"archive";
         $data = student::fetch_passive($conn);
-        $temp['title'] ="Archive ";
+        $temp['title'] ="Archive";
         require("template/profile.list.php");
     break;
 
@@ -134,7 +134,7 @@ switch($_REQUEST['_admin']){
 
     case"assign.class";
         $data = student::assign_batch($conn);
-        $temp['title'] ="Assign Student to Class ";
+        $temp['title'] ="Assign Student to Class";
         require("template/batch.php");
     break;
 

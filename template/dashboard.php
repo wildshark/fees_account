@@ -103,6 +103,9 @@
                 <!-- /# row -->
                 <section id="main-content">
                     <div class="row">
+                        <div class="col-lg-12">
+                            <?=msgbox($_GET['err'])?>
+                        </div>    
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="stat-widget-one">

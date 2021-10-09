@@ -102,36 +102,47 @@ function msgbox($err){
 
         case 100:
             $css ="alert-danger";
-            $msg ="<strong class='text-muted'> Action Failed </strong>";
+            $msg ="<strong class='text-muted'> Action Failed. </strong>";
         break;
 
         case 105;
             $css ="alert-danger";
-            $msg ="<strong class='text-muted'> Delete Failed </strong>";
+            $msg ="<strong class='text-muted'> Delete Failed. </strong>";
+        break;
+
+        case 120:
+            $css ="alert-danger";
+            $msg ="<strong class='text-muted'> Backup Failed. </strong>";
         break;
 
         case 200:
             $css ="alert-success";
-            $msg ="<strong class='text-muted'> Action Successful </strong>";
+            $msg ="<strong class='text-muted'> Action Successful. </strong>";
         break;    
 
-        case 205;
+        case 205:
             $css ="alert-success";
-            $msg ="<strong class='text-muted'> Delete Success  </strong>";
+            $msg ="<strong class='text-muted'> Delete Success. </strong>";
+        break;
+
+        case 220:
+            $css ="alert-success";
+            $msg ="<strong class='text-muted'> Backup Success. </strong>";
         break;
 
         default:
             $css ="alert-primary";
-            $msg ="<strong >Holy guacamole!</strong> You should check in on some of those fields below.";
+            $msg ="<strong class='text-muted'>Welcome !</strong>";
 
     }
 
 
     return"
-    <div class='alert {$css} alert-dismissible fade show'>
-        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-        {$msg}
-    </div>";
+        <div class='alert {$css} alert-dismissible fade show'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+            {$msg}
+        </div>
+    ";
 }
 
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 include("control/db.php");
 include("module/user.account.php");
 include("module/student.php");

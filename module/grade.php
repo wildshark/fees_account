@@ -7,6 +7,7 @@ class grade{
         $sql="INSERT INTO 'main'.'class_grade'('grade') VALUES (?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$r[0]);
+
         return $stmt->execute();
     }
 
@@ -15,6 +16,7 @@ class grade{
         $sql ="UPDATE 'main'.'class_grade' SET 'grade' =? WHERE rowid =?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$id);
+
         return $stmt->execute();
     }
 
@@ -23,6 +25,7 @@ class grade{
         $sql="SELECT *,rowid 'NAVICAT_ROWID' FROM 'main'.'class_grade' LIMIT 0,1000";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
+
         return $stmt->fetchAll();
     }
 
@@ -41,8 +44,8 @@ class grade{
         $sql ="INSERT INTO 'main'.'st_class_type'('session_name') VALUES (?)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$string);
-        return $stmt->execute();
 
+        return $stmt->execute();
     }
 
     public static function fetch_section($conn){
@@ -52,7 +55,6 @@ class grade{
         $stmt->execute();
 
         return $stmt->fetchAll();
-
     }
 
     public static function delete_section($conn,$id){
@@ -60,6 +62,7 @@ class grade{
         $sql="DELETE FROM 'main'.'st_class_type' WHERE rowid = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$id);
+
         return $stmt->execute();
     }
 
@@ -67,6 +70,7 @@ class grade{
 
         $sql="DELETE FROM st_class_type";
         $stmt = $conn->prepare($sql);
+
         return $stmt->execute();
     }
 
@@ -74,6 +78,7 @@ class grade{
 
         $sql="DELETE FROM class_grade";
         $stmt = $conn->prepare($sql);
+        
         return $stmt->execute();
     }
 

@@ -85,7 +85,6 @@ if(!isset($_SESSION['time'])){
                     $r[] = $_REQUEST['address'];
                     $r[] = $_REQUEST['gname'];
                     $r[] = $_REQUEST['gmobile'];
-                    $r[] = $_REQUEST['photo'];
                     $r[] = $_REQUEST['status'];
                     $r[] = $_SESSION['sudent_id'];
                     if(false == student::update($conn,$r)){

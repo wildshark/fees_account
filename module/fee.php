@@ -55,6 +55,7 @@ class fees{
         $stmt->bindParam(7,$r[6]);
         $stmt->bindParam(8,$r[7]);
         $stmt->bindParam(9,$r[8]);
+
         return $stmt->execute();
     }
 
@@ -65,7 +66,6 @@ class fees{
         $stmt->execute();
 
         return $stmt->fetchAll();
-
     }
 
     public static function fetch_payment($conn){
@@ -75,7 +75,6 @@ class fees{
         $stmt->execute();
 
         return $stmt->fetchAll();
-
     }
 
     public static function add_payment($conn,$r){
@@ -91,6 +90,7 @@ class fees{
         $stmt->bindParam(7,$r[6]);
         $stmt->bindParam(8,$r[7]);
         $stmt->bindParam(9,$r[8]);
+
         return $stmt->execute();
     }
 
@@ -99,6 +99,7 @@ class fees{
         $sql="DELETE FROM 'main'.'fee_ledger' WHERE rowid =?";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(1,$id);
+
         return $stmt->execute();
     }
 
@@ -106,6 +107,7 @@ class fees{
 
         $sql="DELETE FROM fee_ledger";
         $stmt = $conn->prepare($sql);
+
         return $stmt->execute();
     }
 
@@ -127,9 +129,10 @@ class fees{
             $stmt->bindParam(10,$r['bill']);
             $stmt->bindParam(11,$r['paid']);
 
-            return $stmt->execute();
-
+            $response = $stmt->execute();
         }
+
+        return $response;
         
     }
 }
