@@ -33,7 +33,6 @@ function profile_menu($token){
     </ul>";
 }
 
-
 function menu($token){
 
     echo"
@@ -75,10 +74,6 @@ function menu($token){
     </ul>";
 }
 
-function msgbox(){
-    
-}
-
 function combo_student($student){
 
     foreach($student as $r){
@@ -98,6 +93,44 @@ function combo_section($sections){
     foreach($sections as $r){
         echo"<option value='{$r['session_name']}'>{$r['session_name']}</option>";
     }
+}
+
+function msgbox($err){
+
+    switch($err){
+
+        case 100:
+            $css ="alert-danger";
+            $msg ="<strong class='text-muted'> Action Failed </strong>";
+        break;
+
+        case 105;
+            $css ="alert-danger";
+            $msg ="<strong class='text-muted'> Delete Failed </strong>";
+        break;
+
+        case 200:
+            $css ="alert-success";
+            $msg ="<strong class='text-muted'> Action Successful </strong>";
+        break;    
+
+        case 205;
+            $css ="alert-success";
+            $msg ="<strong class='text-muted'> Delete Success  </strong>";
+        break;
+
+        default:
+            $css ="alert-primary";
+            $msg ="<strong >Holy guacamole!</strong> You should check in on some of those fields below.";
+
+    }
+
+
+    return"
+    <div class='alert {$css} alert-dismissible fade show'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+        {$msg}
+    </div>";
 }
 
 ?>

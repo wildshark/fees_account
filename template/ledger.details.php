@@ -151,6 +151,7 @@
                         </div>
                     </div>
                     <div class="row">
+                    <?=msgbox($_GET['err'])?>
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="bootstrap-data-table-panel">

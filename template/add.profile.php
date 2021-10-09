@@ -103,6 +103,7 @@
                     <!-- /# row -->
                     <div class="row">
                         <div class="col-lg-12">
+                            <?=msgbox($_GET['err'])?>
                             <div class="card">
                                 <div class="card-title">
                                     <!--h4>Basic Elements</h4-->

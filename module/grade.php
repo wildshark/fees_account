@@ -77,6 +77,11 @@ class grade{
         return $stmt->execute();
     }
 
+    public static function backup_grade($conn){
+
+        $sql ="";
+    }
+
     
 }
 

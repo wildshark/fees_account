@@ -103,6 +103,7 @@
                 <section id="main-content">
                     <div class="row">  
                         <div class="col-lg-12">
+                            <?=msgbox($_GET['err'])?>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".ModalBilling">New Bill</button>
                             <div class="card">    

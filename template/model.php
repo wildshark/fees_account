@@ -175,7 +175,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label>New Password</label>
-                                <input type="text" name="password" class="form-control" placeholder="Grade">
+                                <input type="text" name="password" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="modal-footer">

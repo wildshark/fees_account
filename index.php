@@ -14,6 +14,9 @@ if(!isset($_REQUEST['_submit'])){
             require("template/login.php");
         }else{
             //admin
+            if(!isset($_GET['err'])){
+                $_GET['err'] = 0;
+            }
             include("module/admin.php");
         }
     }else{

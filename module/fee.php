@@ -106,9 +106,7 @@ class fees{
 
         $sql="DELETE FROM fee_ledger";
         $stmt = $conn->prepare($sql);
-        $stmt->execute();
-
-        return $stmt->fetchAll();
+        return $stmt->execute();
     }
 }
 
