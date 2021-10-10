@@ -179,14 +179,34 @@ switch($_REQUEST['_admin']){
         $ledger = $data["ledger"];
         $grade = $data["grade"];
 
-        $response = student::restore_student($conn,$student);
-        $response = grade::restore_grade($conn,$grade);
-        $response = student::restore_section($conn,$section);
+        if($student == false){
+            $response = false;
+        }else{
+            $response = student::restore_student($conn,$student);
+        }
+
+        if($section == false){
+            $response = false;
+        }else{
+             $response = student::restore_section($conn,$section);
+        }
+        
+        if($ledger == false){
+            $response = false;
+        }else{
+            $response = fees::restore_ledger($conn,$ledger);
+        }
+
+        if($grade == false){
+            $response = false;
+        }else{
+            $response = grade::restore_grade($conn,$grade);
+        }       
 
         if($response == false){
             header("location: ?_admin=dashboard&token={$_GET['token']}&err120");
         }else{
-            header("location: ?_admin=dashboard&token={$_GET['token']}&err220");
+            header("location: ?_user=restore-data");
         }
     break;
 
