@@ -36,7 +36,8 @@
                 <div class="col-lg-6">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#"><img  src='assets/images/logo.png' alt='' /></br><span><?=$GLOBALS['header']?></span></a>
+                            <!--a href="#"><!img  src='assets/images/logo.png' alt='' /></br--><!--span><?=$GLOBALS['header']?></span></a-->
+                            <h1 class="text-white"><?=$GLOBALS['header']?></h1>
                         </div>
                         <div class="login-form">
                             <form action="index.php" method="post">

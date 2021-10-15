@@ -8,8 +8,8 @@ $sections = grade::fetch_section($conn);
 function config(){
 
     return array(
-        "application"=>"Fees Record",
-        "header"=>"AGS Fees Record",
+        "application"=>"Fees Record System",
+        "header"=>"Fees Record System",
         "copyright"=>"Copyright © Active A&T Corp. &amp; Developed by <a href='http://iquipedigital.com' target='_blank'>iQuipe Digital</a> 2021"
     );
 }
@@ -38,8 +38,8 @@ function menu($token){
     echo"
     <ul>
         <div class='logo'><a href='#'>
-            <img  src='assets/images/logo.png' alt='' />
-            </br>
+            <!--img  src='assets/images/logo.png' alt='' />
+            </br-->
             <span>Fees Account</span></a>
         </div>
       

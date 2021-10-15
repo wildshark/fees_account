@@ -18,7 +18,7 @@ switch($_REQUEST['_admin']){
             $ledger["bal"] ="0.00";
         }
         $data = fees::fetch_ledger($conn);
-        $temp['title'] =" Welcome to AGS";
+        $temp['title'] =" Welcome!";
         require("template/dashboard.php");
     break;
 
