@@ -38,6 +38,7 @@
                         <div class="login-logo">
                             <!--a href="#"><!img  src='assets/images/logo.png' alt='' /></br--><!--span><?=$GLOBALS['header']?></span></a-->
                             <h1 class="text-white"><?=$GLOBALS['header']?></h1>
+                            <p class="text-white">username: admin | password: admin</p>
                         </div>
                         <div class="login-form">
                             <form action="index.php" method="post">
