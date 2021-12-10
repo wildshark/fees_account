@@ -111,6 +111,37 @@ class fees{
         return $stmt->execute();
     }
 
+    public static function ledger_by_class($conn){
+
+        $sql ="SELECT * FROM 'main'.'get_ledger_summary' LIMIT 0,1000";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public static function ledger_by_class_full($conn,$id,$term){
+
+        $sql ="SELECT fees_by_class_details.* FROM fees_by_class_details WHERE fees_by_class_details.class_id =? AND fees_by_class_details.bal LIKE 0 AND fees_by_class_details.term_id =?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$id);
+        $stmt->bindParam(2,$term);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public static function ledger_by_class_ious($conn,$id,$term){
+
+        $sql ="SELECT fees_by_class_details.* FROM fees_by_class_details WHERE fees_by_class_details.class_id =? AND fees_by_class_details.bal NOT LIKE 0 AND fees_by_class_details.term_id =?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$id);
+        $stmt->bindParam(2,$term);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     public static function restore_ledger($conn,$ledger){
 
         foreach($ledger as $r){
@@ -135,6 +166,8 @@ class fees{
         return $response;
         
     }
+
+
 }
 
 

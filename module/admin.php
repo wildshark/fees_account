@@ -88,6 +88,12 @@ switch($_REQUEST['_admin']){
         require("template/profile.list.php");
     break;
 
+    case"summary";
+        $data = fees::ledger_by_class($conn);
+        $temp['title'] ="Ledger Summary";
+        require("template/ledger.class.php");
+    break;
+
     case"ledger";
         $data = fees::fetch_ledger($conn);
         $temp['title'] ="Ledger ";
@@ -106,6 +112,20 @@ switch($_REQUEST['_admin']){
         $data = fees::fetch_view_ledger($conn,$_GET['id']);
         $temp['title'] ="Ledger";
         require("template/ledger.details.php");
+    break;
+
+    case"ledger.iou";
+        $r = explode("-",$_GET['id']);
+        $data = fees::ledger_by_class_ious($conn,$r[0],$r[1]);
+        $temp['title'] ="IOU(s)";
+        require("template/ledger.class.payment.php");
+    break;
+
+    case"ledger.full";
+        $r = explode("-",$_GET['id']);
+        $data = fees::ledger_by_class_full($conn,$r[0],$r[1]);
+        $temp['title'] ="Full Payment";
+        require("template/ledger.class.payment.php");
     break;
 
     case"billing";

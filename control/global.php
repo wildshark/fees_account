@@ -56,7 +56,7 @@ function menu($token){
         </li>
         <li><a href='?_admin=billing&token={$token}'><i class='ti-stats-up'></i>Billing</a></li>
         <li><a href='?_admin=payment&token={$token}'><i class='ti-stats-down'></i>Payment</a></li>
-        <!--li><a href='?_admin=ledger&token={$token}'><i class='ti-agenda'></i>Fees Ledger</a></li-->
+        <li><a href='?_admin=summary&token={$token}'><i class='ti-agenda'></i>Fees Ledger</a></li>
         <li><a class='sidebar-sub-toggle'><i class='ti-package'></i> Class <span
                     class='sidebar-collapse-icon ti-angle-down'></span></a>
             <ul>
