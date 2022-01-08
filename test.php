@@ -9,8 +9,7 @@
 //  } else {
 //   return false;
 //  }
-
-//}
+//dfsfsdgdgdgdfgdgdgdgdfgdfgdfgdg
 
 //echo is_connected();
 //userdefined function for checking internet
