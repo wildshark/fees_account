@@ -9,7 +9,6 @@ class fees{
         $stmt->execute();
 
         return $stmt->fetch();
-
     }
 
     public static function fetch_ledger($conn){
